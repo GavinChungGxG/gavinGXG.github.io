@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .roller{
+            list-style:none;
+            margin:0px;
+            padding:0px;
+            width:100%;
+            height:100%;
+            overflow:auto;
+            scroll-snap-type:y mandatory;
+        }
+
+        .roller li{
+            width:100%;
+            height:60px;
+            display:flex;
+            aligin-items:center;
+            justify-content:center;
+            font-weight:bold;
+            font-size:1.2rem;
+            color:#333;
+            scroll-snap-align:start;
+        }
+        .roller-wrapper{
+            width:400px;
+            height:300px;
+            position:relative;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.3) 100%);
+            box-shadow: inset 0px 0px 12px rgba(0,0,0,.2);
+            border-radius: 12px;
+        }
+
+        .roller-wrapper::after{
+            content: " ";
+            position: absolute;
+            top:105px;
+            width: 100%;
+            height: 60px;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 0%,rgba(0,0,0,.2) 50%, rgba(0,0,0,.25) 50%, rgba(0,0,0,.1) 100%);
+            box-shadow: 0px 4px 12px rgba(0,0,0,.12);
+            border-top: 1px solid rgba(0,0,0,.12);
+            border-bottom: 1px solid rgba(0,0,0,.12);
+        }
+        .roller li:last-child{
+            margin-bottom: 120px;
+
+        }
+        .roller::-webkit-scrollbar { width: 0 !important }
+    </style>
+</head>
+<body>
+<div class="roller-wrapper">
+    <ul class="roller">
+        <li></li>
+        <li></li>
+        <li>iPhone 12 Pro</li>
+        <li>iPhone 12</li>
+        <li>iPhone 12 mini</li>
+        <li>iPhone SE</li>
+        <li>iPhone 11</li>
+        <li>iPhone XR</li>
+        <li>iPhone XS</li>
+        <li>iPhone X</li>
+    </ul>
+</div>
+</body>
+</html>
